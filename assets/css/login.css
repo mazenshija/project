@@ -1,0 +1,63 @@
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  
+}
+
+
+.input-group::before{
+content: "";
+position: absolute;
+left: 5px;
+width: 20px;
+height: 20px;
+background-size: contain;
+background-repeat: no-repeat; 
+  
+}
+
+.input-group.email::before {
+  background-image: url(/assets/images/email.png);
+}
+
+.input-group.password::before{
+  background-image: url(/assets/images/password-icon.png);
+}
+.input-group input  
+{
+  border: none;
+  outline: none;
+  padding-left:30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  flex: 1;
+
+}
+
+
+
+.button {
+  width: 100%;
+  padding: 0.75em;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+
+
+.input-group img {
+  width: 20px;
+  margin-right: 0.5em;
+}
