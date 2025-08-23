@@ -19,14 +19,15 @@
 
   <main class="form-container">
     <h2>Login</h2>
-    <form action="" method="post">
-      <div class="input-group email">
-        
-        <input type="email"  name="email" autocomplete="username" placeholder="Email" required>
-      </div>
-      <div class="input-group password">
-        
-        <input type="password" placeholder="Password" required>
+     <form id="loginForm" action="#" method="post">
+       <div class="input-group email">
+    <input id="email" type="email" placeholder="Email">
+    <p class="error-message hidden"></p>
+  </div>
+  <div class="input-group password">
+    <input id="password" type="password" placeholder="Password">
+    <p class="error-message hidden"></p>
+  </div>
       </div>
       <button type="submit" class="button">Log In</button>
     </form>
@@ -44,5 +45,9 @@
       <a href="https://www.instagram.com"><img src="/assets/images/instagram.png" alt="Instagram" /></a>
     </div>
   </footer>
+
+  <script src="assets/js/login.js">
+    
+  </script>
 </body>
 </html>

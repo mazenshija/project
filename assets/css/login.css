@@ -61,3 +61,14 @@ background-repeat: no-repeat;
   width: 20px;
   margin-right: 0.5em;
 }
+
+
+.error-message {
+  color: red;
+  font-size: 0.85em;
+  margin: 4px 0 0 30px;
+}
+
+.hidden {
+  display: none;
+}

@@ -346,3 +346,63 @@ background-repeat: no-repeat;
   transform: scale(1.1);
 }
 
+
+.sales-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background: #2e2e2e;
+  color: #fff;
+}
+
+.countdown-container {
+  padding: 20px;
+}
+
+.countdown-header {
+  margin-bottom: 20px;
+}
+
+.countdown-title {
+  background: #2e2e2e;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.countdown-year {
+  font-size: 48px;
+  margin-top: 10px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-box {
+  background: #222;
+  border-radius: 6px;
+  padding: 15px;
+  width: 90px;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+
+
+
