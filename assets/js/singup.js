@@ -13,14 +13,15 @@ const inputs = [fullName, email, password, phone, gender];
 
 
 window.addEventListener("DOMContentLoaded", () => {
-  const savedData = JSON.parse(localStorage.getItem("signupData"));
-  if (savedData) {
-    fullName.value = savedData.fullName || "";
-    email.value = savedData.email || "";
-    password.value = savedData.password || "";
-    phone.value = savedData.phone || "";
-    gender.value = savedData.gender || "";
-  }
+  toastr.warning('My name is Inigo Montoya. You killed my father, prepare to die!')
+//   const savedData = JSON.parse(localStorage.getItem("signupData"));
+//   if (savedData) {
+//     fullName.value = savedData.fullName || "";
+//     email.value = savedData.email || "";
+//     password.value = savedData.password || "";
+//     phone.value = savedData.phone || "";
+//     gender.value = savedData.gender || "";
+//   }
 });
 
 function setError(input, message) {
@@ -42,7 +43,15 @@ function saveSignupInformation() {
     phone: phone.value.trim(),
     gender: gender.value
   };
-  localStorage.setItem("signupData", JSON.stringify(data));
+  let users = localStorage.getItem('users');
+
+  if (users) {
+    users = JSON.parse(users);
+    users.push(data);
+    localStorage.setItem('users',JSON.stringify(users));
+  } else {
+    localStorage.setItem('users', JSON.stringify([data]));
+  }
 }
 
 function validateName() {
@@ -51,7 +60,6 @@ function validateName() {
     return false;
   }
   setError(fullName, "");
-  saveSignupInformation();
   return true;
 }
 
@@ -65,7 +73,6 @@ function validateEmail() {
     return false;
   }
   setError(email, "");
-  saveSignupInformation();
   return true;
 }
 
@@ -79,7 +86,6 @@ function validatePhone() {
     return false;
   }
   setError(phone, "");
-  saveSignupInformation();
   return true;
 }
 
@@ -93,7 +99,6 @@ function validatePassword() {
     return false;
   }
   setError(password, "");
-  saveSignupInformation();
   return true;
 }
 
@@ -103,7 +108,6 @@ function validateGender() {
     return false;
   }
   setError(gender, "");
-  saveSignupInformation();
   return true;
 }
 
@@ -115,6 +119,7 @@ fullName.addEventListener("input", validateName);
 gender.addEventListener("change", validateGender);
 
 form.addEventListener("submit", (e) => {
+    e.preventDefault();
   const ok =
     validateName() &&
     validateEmail() &&
@@ -122,7 +127,7 @@ form.addEventListener("submit", (e) => {
     validatePhone() &&
     validateGender();
 
-  if (!ok) {
-    e.preventDefault();
+  if (ok) {
+    saveSignupInformation();
   }
 });

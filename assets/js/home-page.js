@@ -10,6 +10,7 @@ function updateCountdown() {
   const distance = targetDate - now;
 
   if (distance <= 0) {
+    clearInterval(intervalVar);
     document.querySelector(".countdown-container").innerHTML = `<h2>🎉 Happy ${targetYear} 🎉</h2>`;
     return;
   }
@@ -25,7 +26,7 @@ function updateCountdown() {
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
 }
 
-setInterval(updateCountdown, 1000);
+var intervalVar = setInterval(updateCountdown, 1000);
 updateCountdown();
 
 
